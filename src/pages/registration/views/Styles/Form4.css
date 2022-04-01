@@ -1,0 +1,22 @@
+.ant-slider-mark-text {
+    color:rgba(255, 255, 255, 0.329)
+}
+
+.ant-slider-track {
+    background-color: rgb(115, 245, 115);
+}
+
+.ant-slider:hover .ant-slider-track {
+    background-color: rgb(115, 245, 115);
+    
+}
+
+.ant-slider-handle {
+    background-color: rgb(115, 245, 115);
+    border: none;
+
+}
+.ant-tooltip-inner {
+    background-color: rgb(109, 204, 109);
+    
+}
