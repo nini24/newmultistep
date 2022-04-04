@@ -27,24 +27,38 @@ function RegistrationPageHook() {
         }
 }
 
+const name = useSelector((state) => state.form.data.name)
+const description = useSelector((state) => state.form.data.description)
+const services = useSelector((state) => state.form.data.services)
+const budget = useSelector((state) => state.form.data.budget)
+const email = useSelector((state) => state.form.data.email)
+
+const data ={
+      name:name,
+      description:description,
+      services:services,
+      budget:budget,
+      email:email
+}
     
-    const [data, setData] = useState({
+    /* const [data, setData] = useState({
         name:'',
         description:'',
         services:'',
         budget: '12500hit',
         email:''
       
-      })
+      }) */
+
+
 
       const marks = {
         5000: '5,000',
         12500: '12,500',
         27500: '27,500',
         35000: '35,000'
-    
     }
-      /* const [currentStep, setCurrentStep] = useState(0) */
+    
     
       const makeRequest = (formData) => {
         console.log('Form submitted', formData)

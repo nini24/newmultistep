@@ -34,19 +34,27 @@ const formViews = {
     
 
 }
+const formData = {
+    name:'',
+    description:'',
+    services:'',
+    budget:'12500',
+    email:''
+}
 
 export const formSlice = createSlice({
     name:'form',
     initialState:{
         view:formViews[1],
+        data:formData
     },
     reducers: {
         goToNext: (state,action) => {
-            const formData = action.payload
+            state.data = action.payload
             state.view= formViews[state.view.progress +=1]
         },
         goBack: (state,action) => {
-            const formData = action.payload
+           /*  state.data = action.payload */
             state.view= formViews[state.view.progress -=1]
         }
     }
