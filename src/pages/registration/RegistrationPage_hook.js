@@ -1,13 +1,29 @@
 import {useState} from 'react'
-import Form1 from './views/Form1'
 import * as Yup from 'yup'
+import {useSelector} from 'react-redux'
+import Form1 from "./views/nameForm"
+import Form2 from "./views/describeForm"
+import Form3 from "./views/serviceForm"
+import Form4 from "./views/budgetForm"
+import Form5 from "./views/emailForm"
 
 function RegistrationPageHook() {
 
-    const renderForm = (view) => {
+  const view = useSelector((state) => state.form.view)
+    const renderView = (view) => {
         switch(view.name) {
-            case 'form1':
-                return <Form1 />
+            case 'name':
+                return <Form1/>
+            case 'describe':
+                return <Form2 />
+            case 'services':
+              return <Form3 />
+              case 'budget':
+              return <Form4/>
+              case 'email':
+              return <Form5/>
+              default:
+                break;
         }
 }
 
@@ -20,13 +36,21 @@ function RegistrationPageHook() {
         email:''
       
       })
-      const [currentStep, setCurrentStep] = useState(0)
+
+      const marks = {
+        5000: '5,000',
+        12500: '12,500',
+        27500: '27,500',
+        35000: '35,000'
+    
+    }
+      /* const [currentStep, setCurrentStep] = useState(0) */
     
       const makeRequest = (formData) => {
         console.log('Form submitted', formData)
       }
     
-      const nextStep = (newData, final=false) => {
+     /*  const nextStep = (newData, final=false) => {
         setData(prev => ({...prev, ...newData}))
         if(final) {
           makeRequest(newData)
@@ -39,19 +63,43 @@ function RegistrationPageHook() {
         setData(prev => ({...prev, ...newData}))
         setCurrentStep(prev => prev - 1)
       }
-    
+     */
       const form1Validation = Yup.object({
         name:Yup.string().max(30, 'Must be 30 characters or less').required('Please type your name')
       })
-    
-      /* - */
-    
-     /*  const steps = [<Form1 data={data} next={nextStep} validation={form1Validation} />, <Form2 data={data} next={nextStep} prev={prevStep} validation={form2Validation}/>, <Form3 data={data} next={nextStep} prev={prevStep} validation={form3Validation} />, <Form4 data={data} next={nextStep} prev={prevStep} />, <Form5 data={data} next={nextStep} prev={prevStep} validation={form5Validation}/>]
-     */
 
+      const form2Validation = Yup.object({
+        description:Yup.string().required('An option is required')
+      })
+      const form3Validation = Yup.object({
+        services:Yup.string().required('An option is required')
+      })
+      const form4Validation = Yup.object({
+        budget:Yup.string().required('Pick a value')
+      })
+      const form5Validation = Yup.object({
+        email:Yup.string().email('Invalid email').required('Please enter a mail')
+      })
+
+      const validation = Yup.object({
+        name:Yup.string().max(30, 'Must be 30 characters or less').required('Please type your name'),
+        description:Yup.string().required('An option is required'),
+        services:Yup.string().required('An option is required'),
+        budget:Yup.string().required('Pick a value'),
+        email:Yup.string().email('Invalid email').required('Please enter a mail')
+      })
+    
+    
       return {
-        currentStep,
-        renderForm
+        renderView,
+        form1Validation,
+        form2Validation,
+        form3Validation,
+        form4Validation,
+        form5Validation,
+        validation,
+        data,
+        marks
     }   
 
 }

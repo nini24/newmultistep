@@ -7,8 +7,8 @@ import { AiOutlineMail } from 'react-icons/ai'
 
 const Stepper1 = () => {
     return (
-        <div>
-            <div className="grid grid-cols-2 mb-12">
+        <div className="space-y-12 mt-8">
+            <div className="grid grid-cols-2">
                     <div className="mr-8">
                         <p className="text-white text-right text-md font-semibold">Your Name</p>
                         <p className="text-white/50 text-right text-sm font-light ">Browse and upload</p> 
@@ -17,7 +17,7 @@ const Stepper1 = () => {
                         <FiUser color="white" size={22} />
                     </div>
                 </div>
-                <div className="grid grid-cols-2 mb-12">
+                <div className="grid grid-cols-2">
                     <div className="mr-8">
                         <p className="text-white/25 text-right text-md font-semibold">Describes</p>
                         <p className="text-white/25 text-right text-sm font-light ">Browse and upload</p> 
@@ -26,7 +26,7 @@ const Stepper1 = () => {
                         <FiBookOpen color="grey" size={22} />
                     </div>
                 </div>
-                <div className="grid grid-cols-2 mb-12">
+                <div className="grid grid-cols-2">
                     <div className="mr-8">
                         <p className="text-white/25 text-right text-md font-semibold">Services</p>
                         <p className="text-white/25 text-right text-sm font-light ">Browse and upload</p> 
@@ -35,7 +35,7 @@ const Stepper1 = () => {
                         <RiPenNibLine color="grey" size={22} />
                     </div>
                 </div>
-                <div className="grid grid-cols-2 mb-12">
+                <div className="grid grid-cols-2">
                     <div className="mr-8">
                         <p className="text-white/25 text-right text-md font-semibold">Budget</p>
                         <p className="text-white/25 text-right text-sm font-light ">Browse and upload</p> 
@@ -44,7 +44,7 @@ const Stepper1 = () => {
                         <RiPriceTag3Line color="grey" size={22} />
                     </div>
                 </div>
-                <div className="grid grid-cols-2 mb-12">
+                <div className="grid grid-cols-2">
                     <div className="mr-8">
                         <p className="text-white/25 text-right text-md font-semibold">Complete</p>
                         <p className="text-white/25 text-right text-sm font-light ">Browse and upload</p> 
