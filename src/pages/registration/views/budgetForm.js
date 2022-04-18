@@ -2,8 +2,8 @@ import React from "react";
 import "antd/dist/antd.css";
 import { Slider } from "antd";
 import './Styles/Form4.css'
-import {Formik, Form, Field, ErrorMessage} from 'formik'
-import {useDispatch,useSelector} from 'react-redux'
+import {Formik, Form, ErrorMessage} from 'formik'
+import {useDispatch} from 'react-redux'
 import { goToNext,goBack } from "../../../redux/formSlice";
 import RegistrationPageHook from "../RegistrationPage_hook"
 
@@ -12,7 +12,7 @@ import RegistrationPageHook from "../RegistrationPage_hook"
 
 
 
-const Form4 = (props) =>
+const BudgetForm = (props) =>
  {
     const dispatch = useDispatch()
     const {data, form4Validation,marks}=RegistrationPageHook()
@@ -48,4 +48,4 @@ const Form4 = (props) =>
     )
 }
 
-export default Form4
+export default BudgetForm

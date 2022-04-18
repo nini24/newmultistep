@@ -1,14 +1,14 @@
 import React from "react";
 import './Styles/Form1.css'
 import {Formik, Field,Form,ErrorMessage} from 'formik'
-import {useSelector, useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import { goToNext } from "../../../redux/formSlice";
 import RegistrationPageHook from "../RegistrationPage_hook"
 
 
 
 
-const Form1 = (props) => {
+const NameForm = (props) => {
     const {form1Validation,data} = RegistrationPageHook()
     const dispatch = useDispatch()
    
@@ -36,4 +36,4 @@ const Form1 = (props) => {
     )
 }
 
-export default Form1
+export default NameForm

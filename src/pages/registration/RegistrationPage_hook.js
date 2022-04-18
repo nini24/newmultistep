@@ -1,11 +1,11 @@
 import {useState} from 'react'
 import * as Yup from 'yup'
 import {useSelector} from 'react-redux'
-import Form1 from "./views/nameForm"
-import Form2 from "./views/describeForm"
-import Form3 from "./views/serviceForm"
-import Form4 from "./views/budgetForm"
-import Form5 from "./views/emailForm"
+import NameForm from "./views/nameForm"
+import DescribeForm from "./views/describeForm"
+import ServiceForm from "./views/serviceForm"
+import BudgetForm from "./views/budgetForm"
+import EmailForm from "./views/emailForm"
 
 function RegistrationPageHook() {
 
@@ -13,15 +13,15 @@ function RegistrationPageHook() {
     const renderView = (view) => {
         switch(view.name) {
             case 'name':
-                return <Form1/>
+                return <NameForm/>
             case 'describe':
-                return <Form2 />
+                return <DescribeForm />
             case 'services':
-              return <Form3 />
+              return <ServiceForm />
               case 'budget':
-              return <Form4/>
+              return <BudgetForm />
               case 'email':
-              return <Form5/>
+              return <EmailForm />
               default:
                 break;
         }
@@ -40,16 +40,6 @@ const data ={
       budget:budget,
       email:email
 }
-    
-    /* const [data, setData] = useState({
-        name:'',
-        description:'',
-        services:'',
-        budget: '12500hit',
-        email:''
-      
-      }) */
-
 
 
       const marks = {
@@ -60,24 +50,6 @@ const data ={
     }
     
     
-      const makeRequest = (formData) => {
-        console.log('Form submitted', formData)
-      }
-    
-     /*  const nextStep = (newData, final=false) => {
-        setData(prev => ({...prev, ...newData}))
-        if(final) {
-          makeRequest(newData)
-          return
-        }
-        setCurrentStep(prev => prev + 1)
-      }
-      
-      const prevStep = (newData) => {
-        setData(prev => ({...prev, ...newData}))
-        setCurrentStep(prev => prev - 1)
-      }
-     */
       const form1Validation = Yup.object({
         name:Yup.string().max(30, 'Must be 30 characters or less').required('Please type your name')
       })
@@ -95,13 +67,13 @@ const data ={
         email:Yup.string().email('Invalid email').required('Please enter a mail')
       })
 
-      const validation = Yup.object({
+      /* const validation = Yup.object({
         name:Yup.string().max(30, 'Must be 30 characters or less').required('Please type your name'),
         description:Yup.string().required('An option is required'),
         services:Yup.string().required('An option is required'),
         budget:Yup.string().required('Pick a value'),
         email:Yup.string().email('Invalid email').required('Please enter a mail')
-      })
+      }) */
     
     
       return {
@@ -111,7 +83,6 @@ const data ={
         form3Validation,
         form4Validation,
         form5Validation,
-        validation,
         data,
         marks
     }   

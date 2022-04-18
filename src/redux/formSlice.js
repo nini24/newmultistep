@@ -4,31 +4,31 @@ const formViews = {
     1:{
         name:'name',
         step:'1/5',
-        title:'Please let us know',
+        title:"Let's start with your name",
         progress:1
     },
     2:{
         name:'describe',
         step:'2/5',
-        title:'Please let us know',
+        title:'What best describes you?',
         progress:2
     },
     3:{
         name:'services',
         step:'3/5',
-        title:'Please let us know',
+        title:'What services are you looking for?',
         progress:3
     },
     4:{
         name:'budget',
         step:'4/5',
-        title:'Please let us know',
+        title:'Please select your budget',
         progress:4
     },
     5:{
         name:'email',
         step:'5/5',
-        title:'Please let us know',
+        title:'Complete Submission',
         progress:5
     },
     

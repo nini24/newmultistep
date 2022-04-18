@@ -1,12 +1,12 @@
 import React from "react";
 import {Formik, Form, Field, ErrorMessage} from 'formik'
-import {useSelector, useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import { goToNext,goBack } from "../../../redux/formSlice";
 import RegistrationPageHook from "../RegistrationPage_hook"
 
 
 
-const Form3 = (props) =>
+const ServiceForm = (props) =>
 {
     const dispatch= useDispatch()
     const {data, form3Validation} = RegistrationPageHook()
@@ -25,7 +25,7 @@ const Form3 = (props) =>
                     <Form className="mt-8">
                    <div className="relative mb-4">
                        <Field type='radio' name='services' id="website"  value='development' className="hidden peer" />
-                       <label htmlFor='development' className="grid border border-slate-400 rounded-md bg-transparent px-3 py-4 peer-checked:border-green-400 transition">
+                       <label htmlFor='website' className="grid border border-slate-400 rounded-md bg-transparent px-3 py-4 peer-checked:border-green-400 transition">
                            <div className="grid grid-cols-6">
                                <div className="w-16"> 
                                    <div className="flex ml-4 items-center justify-center bg-white/25 rounded-full w-12 h-12">
@@ -72,4 +72,4 @@ const Form3 = (props) =>
     )
 }
 
-export default Form3
+export default ServiceForm
