@@ -1,6 +1,6 @@
 import React from "react";
 import "antd/dist/antd.css";
-import { Slider } from "antd";
+import { Slider } from "formik-antd";
 import './Styles/Form4.css'
 import {Formik, Form, ErrorMessage} from 'formik'
 import {useDispatch} from 'react-redux'
